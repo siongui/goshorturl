@@ -49,6 +49,7 @@ Each record in the table of database contains three value
 
 - For every **originalURL** is received, search **originalURL** field in the
   table of database:
+
   * If record found, return **shortURL**.
   * If record not found, randomly generate a *uint64* value. Search the value
     in the table of database. If the value already exists, re-genetate a
@@ -58,6 +59,7 @@ Each record in the table of database contains three value
 
 - For every **shortURL** is received, search **shortURL** field in the table of
   database:
+
   * If record found, return **originalURL**.
   * If record not found, return HTTP 404.
 
