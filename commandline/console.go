@@ -3,6 +3,7 @@ package main
 import (
 	"database/sql"
 	"fmt"
+	"strconv"
 	"strings"
 
 	"github.com/siongui/goshorturl"
@@ -25,7 +26,7 @@ func HandleUrl(url string) {
 		}
 
 		row := goshorturl.ShortUrl{
-			Id:           id,
+			Id:           strconv.FormatUint(id, 10),
 			ShortUrlCode: goshorturl.GetShortUrlCodeFromId(id),
 			OriginalUrl:  url,
 		}
@@ -36,7 +37,7 @@ func HandleUrl(url string) {
 			fmt.Println("!!! Fail to insert into database", row, err)
 			return
 		}
-		fmt.Printf("Short Url Code: %s , URL: %s inserted\n", row.ShortUrlCode, row.OriginalUrl)
+		fmt.Printf("Inserted - Id: %s , Short Url Code: %s , URL: %s\n", row.Id, row.ShortUrlCode, row.OriginalUrl)
 	}
 }
 

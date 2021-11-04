@@ -15,7 +15,7 @@ func TestSqliteOperation(t *testing.T) {
 	}
 
 	u := ShortUrl{
-		Id:           123456,
+		Id:           "123456",
 		ShortUrlCode: "ashiie",
 		OriginalUrl:  "https://abc.ed/aas",
 	}
@@ -27,7 +27,7 @@ func TestSqliteOperation(t *testing.T) {
 	}
 
 	u2 := ShortUrl{
-		Id:           56789,
+		Id:           "56789",
 		ShortUrlCode: "eurocse",
 		OriginalUrl:  "https://dbc.es/tuy",
 	}

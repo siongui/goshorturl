@@ -12,7 +12,7 @@ import (
 
 // ShortUrl represents the structure of short links.
 type ShortUrl struct {
-	Id           uint64
+	Id           string
 	ShortUrlCode string
 	OriginalUrl  string
 }
