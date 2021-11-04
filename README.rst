@@ -64,6 +64,64 @@ Each record in the table of database contains three value
   * If record not found, return HTTP 404.
 
 
+Usage
++++++
+
+*go get* this package:
+
+.. code-block:: bash
+
+  $ go get github.com/siongui/goshorturl
+
+Run the console via:
+
+.. code-block:: bash
+
+  $ go run commandline/console.go
+
+The following is my test ouput:
+
+.. code-block:: txt
+
+  Please enter short url code or URL (ctrl+c to quit): https://gobyexample.com/string-formatting
+  [bun]  18:11:12.700   INSERT                  139µs  INSERT INTO "short_urls" ("id", "short_url_code", "original_url") VALUES (14608567808145849023, 'zUMdCy4yieZ', 'https://gobyexample.com/string-formatting') 	  *errors.errorString: Data type mismatch (SQLITE_MISMATCH) 
+  !!! Fail to insert into database {14608567808145849023 zUMdCy4yieZ https://gobyexample.com/string-formatting} Data type mismatch (SQLITE_MISMATCH)
+  Please enter short url code or URL (ctrl+c to quit): https://gobyexample.com/string-formatting
+  [bun]  18:11:16.485   INSERT                  117µs  INSERT INTO "short_urls" ("id", "short_url_code", "original_url") VALUES (13324812258418507117, 'wVWPr8ovnbM', 'https://gobyexample.com/string-formatting') 	  *errors.errorString: Data type mismatch (SQLITE_MISMATCH) 
+  !!! Fail to insert into database {13324812258418507117 wVWPr8ovnbM https://gobyexample.com/string-formatting} Data type mismatch (SQLITE_MISMATCH)
+  Please enter short url code or URL (ctrl+c to quit): https://gobyexample.com/string-formatting
+  Short Url Code: gwyD77kRd72 , URL: https://gobyexample.com/string-formatting inserted
+  Please enter short url code or URL (ctrl+c to quit): https://gobyexample.com/string-formatting
+  short url code:  gwyD77kRd72
+  Please enter short url code or URL (ctrl+c to quit): gwyD77kRd72
+  original URL:  https://gobyexample.com/string-formatting
+  Please enter short url code or URL (ctrl+c to quit): https://tour.golang.org/flowcontrol/12
+  Short Url Code: dwM6eegQkcb , URL: https://tour.golang.org/flowcontrol/12 inserted
+  Please enter short url code or URL (ctrl+c to quit): https://tour.golang.org/flowcontrol/12
+  short url code:  dwM6eegQkcb
+  Please enter short url code or URL (ctrl+c to quit): dwM6eegQkcb
+  original URL:  https://tour.golang.org/flowcontrol/12
+  Please enter short url code or URL (ctrl+c to quit): 7kRd72
+  HTTP 404 not found
+  Please enter short url code or URL (ctrl+c to quit): https://gobyexample.com/string-formatting
+  short url code:  gwyD77kRd72
+  Please enter short url code or URL (ctrl+c to quit): https://stackoverflow.com/questions/43027502/sqlite-mismatch-data-type-mismatch
+  [bun]  18:12:52.850   INSERT                  132µs  INSERT INTO "short_urls" ("id", "short_url_code", "original_url") VALUES (15839552607118586405, 'CLvxRQFnqH4', 'https://stackoverflow.com/questions/43027502/sqlite-mismatch-data-type-mismatch') 	  *errors.errorString: Data type mismatch (SQLITE_MISMATCH) 
+  !!! Fail to insert into database {15839552607118586405 CLvxRQFnqH4 https://stackoverflow.com/questions/43027502/sqlite-mismatch-data-type-mismatch} Data type mismatch (SQLITE_MISMATCH)
+  Please enter short url code or URL (ctrl+c to quit): https://stackoverflow.com/questions/43027502/sqlite-mismatch-data-type-mismatch
+  [bun]  18:12:57.845   INSERT                  182µs  INSERT INTO "short_urls" ("id", "short_url_code", "original_url") VALUES (11334990279396593669, 'sj3ZtTaAn5H', 'https://stackoverflow.com/questions/43027502/sqlite-mismatch-data-type-mismatch') 	  *errors.errorString: Data type mismatch (SQLITE_MISMATCH) 
+  !!! Fail to insert into database {11334990279396593669 sj3ZtTaAn5H https://stackoverflow.com/questions/43027502/sqlite-mismatch-data-type-mismatch} Data type mismatch (SQLITE_MISMATCH)
+  Please enter short url code or URL (ctrl+c to quit): https://stackoverflow.com/questions/43027502/sqlite-mismatch-data-type-mismatch
+  [bun]  18:13:01.325   INSERT                  127µs  INSERT INTO "short_urls" ("id", "short_url_code", "original_url") VALUES (9983502716820367397, 'pb6Gkkht7Sz', 'https://stackoverflow.com/questions/43027502/sqlite-mismatch-data-type-mismatch') 	  *errors.errorString: Data type mismatch (SQLITE_MISMATCH) 
+  !!! Fail to insert into database {9983502716820367397 pb6Gkkht7Sz https://stackoverflow.com/questions/43027502/sqlite-mismatch-data-type-mismatch} Data type mismatch (SQLITE_MISMATCH)
+  Please enter short url code or URL (ctrl+c to quit): https://stackoverflow.com/questions/43027502/sqlite-mismatch-data-type-mismatch
+  Short Url Code: cXMMo2rT981 , URL: https://stackoverflow.com/questions/43027502/sqlite-mismatch-data-type-mismatch inserted
+
+Known issue: As you can see from above output, sometimes we will get
+`Data type mismatch (SQLITE_MISMATCH)` error and sometimes not. To be
+investigated.
+
+
 UNLICENSE
 +++++++++
 
