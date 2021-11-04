@@ -84,3 +84,13 @@ func SelectByOriginalUrl(oriurl string) (us ShortUrl, err error) {
 		Scan(ctx)
 	return
 }
+
+// SelectByShortUrlCode selects the record by short url code in the database.
+func SelectByShortUrlCode(code string) (us ShortUrl, err error) {
+	err = db.NewSelect().
+		Model(&us).
+		Where("short_url_code = ?", code).
+		Limit(1).
+		Scan(ctx)
+	return
+}

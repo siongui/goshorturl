@@ -69,4 +69,17 @@ func TestSqliteOperation(t *testing.T) {
 		t.Error(err)
 		return
 	}
+
+	su, err = SelectByShortUrlCode("eurocse")
+	if err != nil {
+		t.Error(err)
+		return
+	}
+	t.Log(su)
+
+	_, err = SelectByShortUrlCode("eurocse1")
+	if err != sql.ErrNoRows {
+		t.Error(err)
+		return
+	}
 }
