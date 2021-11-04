@@ -15,9 +15,9 @@ func TestSqliteOperation(t *testing.T) {
 	}
 
 	u := ShortUrl{
-		Id:          123456,
-		ShortUrl:    "ashiie",
-		OriginalUrl: "https://abc.ed/aas",
+		Id:           123456,
+		ShortUrlCode: "ashiie",
+		OriginalUrl:  "https://abc.ed/aas",
 	}
 
 	_, err = InsertShortUrl(u)
@@ -27,9 +27,9 @@ func TestSqliteOperation(t *testing.T) {
 	}
 
 	u2 := ShortUrl{
-		Id:          56789,
-		ShortUrl:    "eurocse",
-		OriginalUrl: "https://dbc.es/tuy",
+		Id:           56789,
+		ShortUrlCode: "eurocse",
+		OriginalUrl:  "https://dbc.es/tuy",
 	}
 	_, err = InsertShortUrl(u2)
 	if err != nil {

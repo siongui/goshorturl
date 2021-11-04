@@ -12,9 +12,9 @@ import (
 
 // ShortUrl represents the structure of short links.
 type ShortUrl struct {
-	Id          uint64
-	ShortUrl    string
-	OriginalUrl string
+	Id           uint64
+	ShortUrlCode string
+	OriginalUrl  string
 }
 
 var db *bun.DB
