@@ -94,9 +94,11 @@ References
        | `golang url shortener - Yandex search <https://www.yandex.com/search/?text=golang+url+shortener>`_
 
 .. [4] `How to Create a Custom URL Shortener Using Golang and Redis <https://intersog.com/blog/how-to-write-a-custom-url-shortener-using-golang-and-redis/>`_
-
 .. [5] | `Let's build a URL shortener in Go - Final Part : Forwarding <https://www.eddywm.com/lets-build-a-url-shortener-in-go-part-iv-forwarding/>`_
        | `GitHub - eddywm/go-shortener-wm: A  super fast url shortener service written in Go <https://github.com/eddywm/go-shortener-wm>`_
+.. [6] `Using PostgreSQL with Go - Calhoun.io <https://www.calhoun.io/using-postgresql-with-go/>`_
+.. [7] `[Golang] Seed Pseudorandom Number Generator (PRNG) Properly <https://siongui.github.io/2017/03/21/go-seed-pseudo-random-number-generator-properly/>`_
+
 
 .. _Go: https://golang.org/
 .. _Ubuntu 20.04: https://releases.ubuntu.com/20.04/
